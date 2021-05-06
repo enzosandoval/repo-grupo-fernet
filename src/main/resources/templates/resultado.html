@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+<link rel="stylesheet"
+	th:href="@{/webjars/fontawesome/css/font-awesome.min.css}">
+<link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+</head>
+<body>
+	<div th:replace="layout/navbar :: navbar"></div>
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="table-responsive-md col-11">
+				<h1>Tabla Productos</h1>
+				<table class="table table-hover content-table">
+					<thead class="bg-primary">
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Codigo</th>
+							<th scope="col">Nombre</th>
+							<th scope="col">Precio</th>
+							<th scope="col">Marca</th>
+							<th scope="col">Stock</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="producto, i: ${listado}">
+							<th scope="row" th:text="${i.index + 1}"></th>
+							<td th:text="${producto.codigo}"></td>
+							<td th:text="${producto.nombre}"></td>
+							<td th:text="${producto.precio} "></td>
+							<td th:text="${producto.marca}"></td>
+							<td th:text="${producto.stock}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12" style="height: 210px;"></div>
+	<div th:replace="layout/footer :: footer"></div>
+</body>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</html>

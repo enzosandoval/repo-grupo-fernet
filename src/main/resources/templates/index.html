@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inicio</title>
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+<link rel="stylesheet"
+	th:href="@{/webjars/fontawesome/css/font-awesome.min.css}">
+<link rel="stylesheet" th:href="@{/css/styles.css}">
+<link rel="stylesheet" th:href="@{/css/footer.css}">
+</head>
+<body>
+	<header th:replace="layout/header :: header"> </header>
+	<div th:replace="layout/navbar :: navbar"></div>
+	<div class="container-fluid">
+		<div class="row">
+			<section class="col-md-8">
+				<div class="col-xs-12" style="height: 480px;"></div>
+			</section>
+			<aside th:replace="layout/publicidad :: publicidad"></aside>
+		</div>
+	</div>
+	<footer th:replace="layout/footer :: footer"></footer>
+</body>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</html>
