@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * 
  * Enzo Aramayo https://github.com/enzosandoval
  * Andrés Chaile https://github.com/andres777c
- * Matías Sardina https://github.com/matiasard
+ * Gabirel Matías Sardina https://github.com/matiasard
  * Gabriel Molina https://github.com/gabrielmol92
  * 
  */
