@@ -54,3 +54,22 @@
 	width: 100px;
 	height: 100px;
 }
+
+/***********************************************************
+*******	 HOME STYLE  */
+.forma-de-pago__color{
+	background-color: #e1e5ea;
+}
+.forma-de-pago__titulo{
+	font-size:1.2em;
+}
+.forma-de-pago__sub-titulo{
+	font-size: 0.9em;
+}
+
+.categoria__titulo{
+	font-size:1.5em;
+}
+.categoria__sub-titulo{
+	font-size:1.2em;
+}
