@@ -31,12 +31,8 @@ public class CompraController {
 	
 	
 	
-	mostrarProductoSeleccionado (){
+	comprarProductoSeleccionado (){
 		
-	}
 	
-	mostrarCompras (){
-		
-	}
 	
 }
