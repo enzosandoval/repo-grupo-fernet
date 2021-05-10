@@ -49,8 +49,7 @@ public class ClienteServiceImp implements IClienteService {
 	public List<Cliente> obtenerLista() {
 		LOGGER.info("SERVICE: ClienteService");
 		/**
-		 * Para la demostración se debe agregar algún registro a la lista para no
-		 * devolver la lista vacía
+		 * Para la demostración se agregó un registro por defecto a la lista
 		 */
 		if (listaClientes.size() == 0) {
 			generarLista();

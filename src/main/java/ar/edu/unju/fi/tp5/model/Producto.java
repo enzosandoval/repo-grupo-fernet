@@ -18,10 +18,32 @@ public class Producto {
 	private String nombre;
 	private double precio;
 	private String marca;
+	private String descripcion;
+	private String image;
 	private int stock;
 
-	// Constructor sin párametros
+	// Constructor por defecto
 	public Producto() {
+	}
+
+	/**
+	 * @param codigo
+	 * @param nombre
+	 * @param precio
+	 * @param marca
+	 * @param descripcion
+	 * @param image
+	 * @param stock
+	 */
+	public Producto(int codigo, String nombre, double precio, String marca, String descripcion, String image,
+			int stock) {
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.precio = precio;
+		this.marca = marca;
+		this.descripcion = descripcion;
+		this.image = image;
+		this.stock = stock;
 	}
 
 	/**
@@ -81,6 +103,34 @@ public class Producto {
 	}
 
 	/**
+	 * @return the descripcion
+	 */
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	/**
+	 * @param descripcion the descripcion to set
+	 */
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	/**
+	 * @return the image
+	 */
+	public String getImage() {
+		return image;
+	}
+
+	/**
+	 * @param image the image to set
+	 */
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	/**
 	 * @return the stock
 	 */
 	public int getStock() {
@@ -97,7 +147,7 @@ public class Producto {
 	@Override
 	public String toString() {
 		return "Producto [codigo=" + codigo + ", nombre=" + nombre + ", precio=" + precio + ", marca=" + marca
-				+ ", stock=" + stock + "]";
+				+ ", descripcion=" + descripcion + ", image=" + image + ", stock=" + stock + "]";
 	}
 
 }

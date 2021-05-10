@@ -17,6 +17,8 @@ public interface IProductoService {
 
 	public Producto obtenerUltimo();
 
-	public List<Producto> obtenerLista();
+	public List<Producto> obtenerProductos();
+
+	public Producto buscarProducto(int posicion);
 
 }

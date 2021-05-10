@@ -3,12 +3,17 @@
  */
 package ar.edu.unju.fi.tp5.controller;
 
+import java.io.IOException;
+import java.util.Base64;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import ar.edu.unju.fi.tp5.model.Producto;
 import ar.edu.unju.fi.tp5.service.IProductoService;
@@ -39,12 +44,16 @@ public class ProductoController {
 
 	/**
 	 * 
-	 * @return La página resultado.html que muestra la lista de productos agregados
+	 * @return La página resultado.html
 	 */
-	@PostMapping("/producto/guardar")
-	public String getResultado(@ModelAttribute("producto") Producto producto, Model model) {
+	@PostMapping(value = "/producto/guardar", consumes = "multipart/form-data")
+	public String getResultado(@RequestParam("file") MultipartFile file, @ModelAttribute("producto") Producto producto,
+			Model model) throws IOException {
+		byte[] content = file.getBytes();
+		String base64 = Base64.getEncoder().encodeToString(content);
+		producto.setImage(base64);
 		productoService.guardar(producto);
-		model.addAttribute("listado", productoService.obtenerLista());
+		model.addAttribute("productos", productoService.obtenerProductos());
 		return "resultado";
 	}
 
@@ -56,6 +65,16 @@ public class ProductoController {
 	public String getUltimoProducto(Model map) {
 		map.addAttribute("producto", productoService.obtenerUltimo());
 		return "ultimoproducto";
+	}
+
+	/**
+	 * 
+	 * @return La página de productos
+	 */
+	@GetMapping("/productos")
+	public String getProductos(Model map) {
+		map.addAttribute("productos", productoService.obtenerProductos());
+		return "compraproductos";
 	}
 
 }

@@ -2,7 +2,6 @@
 	url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap')
 	;
 
-
 * {
 	margin: 0;
 	font-family: 'Source Sans Pro';
@@ -57,20 +56,33 @@
 
 /***********************************************************
 *******	 HOME STYLE  */
-.forma-de-pago__color{
+.forma-de-pago__color {
 	background-color: #e1e5ea;
 }
-.forma-de-pago__titulo{
-	font-size:1.2em;
+
+.forma-de-pago__titulo {
+	font-size: 1.2em;
 }
-.forma-de-pago__sub-titulo{
+
+.forma-de-pago__sub-titulo {
 	font-size: 0.9em;
 }
 
-.categoria__titulo{
-	font-size:1.5em;
-}
-.categoria__sub-titulo{
-	font-size:1.2em;
+.categoria__titulo {
+	font-size: 1.5em;
 }
 
+.categoria__sub-titulo {
+	font-size: 1.2em;
+}
+
+/* Para sacarle los efectos a ciertos links y cards tittle */
+.card-title, .card-text {
+	color: #212529;
+	text-decoration: none;
+}
+
+#non-effecteed-link, #non-effecteed-link:hover {
+	color: #212529;
+	text-decoration: none;
+}
