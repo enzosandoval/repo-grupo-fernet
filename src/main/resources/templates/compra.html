@@ -12,8 +12,7 @@
 <body>
 	<div th:replace="layout/navbar.html :: navbar"></div>
 	<div class="container">
-		<br> <br> <br>
-		<div class="row justify-content-center">
+		<div class="row justify-content-center my-5 shadow p-3 bg-white rounded">
 			<div class="col-md-6 mb-4 mb-md-0">
 				<div id="mdb-lightbox-ui"></div>
 				<div class="mdb-lightbox">
@@ -32,9 +31,9 @@
 			<div class="col-md-6">
 				<form target="_blank" action="https://website.com/action.php"
 					method="POST">
-					<h5>
+					<h1 class="compra__titulo">
 						<span th:text="${compra.producto.nombre}"></span>
-					</h5>
+					</h1>
 					<p class="mb-2 text-muted text-uppercase small"
 						th:text="${compra.producto.marca}"></p>
 					<p class="mb-2 text-muted small"

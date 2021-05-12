@@ -9,14 +9,15 @@
 <link rel="stylesheet"
 	th:href="@{/webjars/fontawesome/css/font-awesome.min.css}">
 <link rel="stylesheet" th:href="@{/css/footer.css}">
+<link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
 	<div th:replace="layout/navbar :: navbar"></div>
 	<div class="container-fluid">
 		<div th:if="${producto != null}" class="row justify-content-center">
-			<div class="col-md-6">
+			<div class="col-md-6 my-5 shadow p-4 bg-white rounded">
 				<br>
-				<h2>Ultimo producto agregado</h2>
+				<h1  class="text-center">Ultimo producto agregado</h1>
 				<br>
 				<div class="table-responsive">
 					<table class="table table-sm table-borderless mb-0">
