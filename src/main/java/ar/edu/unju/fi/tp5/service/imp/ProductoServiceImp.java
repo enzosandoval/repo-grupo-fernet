@@ -23,6 +23,8 @@ public class ProductoServiceImp implements IProductoService {
 	// Constante LOGGER para realizar las trazas de la aplicación
 	private static final Log LOGGER = LogFactory.getLog(ProductoServiceImp.class);
 
+	private static int id = 0;
+
 	// Lista de productos
 	private List<Producto> lista = new ArrayList<Producto>();
 
@@ -30,7 +32,7 @@ public class ProductoServiceImp implements IProductoService {
 		LOGGER.info("SERVICE: ProductoService");
 		LOGGER.info("METHOD: generarLista()");
 		Producto producto = new Producto();
-		producto.setCodigo(11010);
+		producto.setCodigo(id);
 		producto.setMarca("Adidas");
 		producto.setNombre("Adidas Superstar Foundation");
 		producto.setImage(
@@ -38,8 +40,9 @@ public class ProductoServiceImp implements IProductoService {
 		producto.setPrecio(16999.99);
 		producto.setDescripcion(
 				"50 años de fama acompañan a la punta de caucho. Superstar se convirtió en un ícono de la moda entre los mejores jugadores y raperos del mundo. Pasó de generación en generación directamente desde las canchas hacia las calles.");
-		producto.setStock(999);
+		producto.setStock(9);
 		lista.add(producto);
+		id++;
 		LOGGER.info("RESULT: " + lista.size());
 	}
 
@@ -50,7 +53,9 @@ public class ProductoServiceImp implements IProductoService {
 		if (lista.isEmpty()) {
 			generarLista();
 		}
+		producto.setCodigo(id);
 		lista.add(producto);
+		id++;
 		LOGGER.info("RESULT: Producto agregado con éxito -> Tamaño lista: " + lista.size());
 	}
 
@@ -62,8 +67,8 @@ public class ProductoServiceImp implements IProductoService {
 		if (lista.isEmpty()) {
 			generarLista();
 		}
-		if (lista.size() > 0) {
-			LOGGER.info("RESULT: Ultimo producto: " + lista.get(lista.size() - 1));
+		if (!lista.isEmpty()) {
+			LOGGER.info("RESULT: Ultimo producto: " + lista.get(lista.size() - 1).getNombre());
 			producto = lista.get(lista.size() - 1);
 		}
 		return producto;
@@ -72,7 +77,7 @@ public class ProductoServiceImp implements IProductoService {
 	@Override
 	public List<Producto> obtenerProductos() {
 		LOGGER.info("SERVICE: ProductoService");
-		LOGGER.info("METHOD: obtenerLista()");
+		LOGGER.info("METHOD: obtenerProductos()");
 		if (lista.isEmpty()) {
 			generarLista();
 		}
@@ -81,14 +86,16 @@ public class ProductoServiceImp implements IProductoService {
 	}
 
 	@Override
-	public Producto buscarProducto(int posicion) {
+	public Producto buscarProducto(int id) {
 		Producto producto = null;
 		LOGGER.info("SERVICE: ProductoService");
 		LOGGER.info("METHOD: buscarProducto()");
-		if (lista.size() > 0 && lista.size() > posicion) {
-			producto = lista.get(posicion);
+		for (Producto buscado : lista) {
+			if (buscado.getCodigo() == id) {
+				producto = buscado;
+				LOGGER.info("RESULT: Producto -> " + producto.getNombre());
+			}
 		}
-		LOGGER.info("RESULT: Product -> " + producto);
 		return producto;
 	}
 

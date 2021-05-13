@@ -3,6 +3,7 @@
  */
 package ar.edu.unju.fi.tp5.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Component;
 public class Compra {
 
 	private int id;
+	@Autowired
 	private Producto producto;
 	private int cantidad;
 	private double total;

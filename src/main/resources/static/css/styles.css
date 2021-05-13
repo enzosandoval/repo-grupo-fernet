@@ -6,8 +6,9 @@
 	margin: 0;
 	/*font-family: 'Source Sans Pro';*/
 }
-body{
-	background-color:#e7e7e7;
+
+body {
+	background-color: #e7e7e7;
 }
 
 /* Estilos para las cards de Bootstrap */
@@ -59,7 +60,6 @@ body{
 
 /***********************************************************
 *******	 HOME STYLE  */
-
 .forma-de-pago__titulo {
 	font-size: 1.2em;
 }
@@ -84,32 +84,58 @@ body{
 
 /***********************************************************
 *******	 Pagina COMPRAPRODUCTOS  */
-
-.box__card{
+.box__card {
 	transition: box-shadow .3s;
 }
-.box__card:hover{
-  box-shadow: 0 0 11px rgba(33,33,33,.5); 
-}
 
+.box__card:hover {
+	box-shadow: 0 0 11px rgba(33, 33, 33, .5);
+}
 
 #non-effecteed-link, #non-effecteed-link:hover {
 	color: #212529;
 	text-decoration: none;
 }
 
-
 /***********************************************************
 *******	 Pagina ULTIMOPRODUCTO  */
-
-.box__table{
+.box__table {
 	background-color: #fff;
 	border-radius: 10px;
 }
 
 /***********************************************************
 *******	 Pagina COMPRA  */
+.compra__titulo {
+	font-size: 2em;
+}
 
-.compra__titulo{
-	font-size:2em;
+/***********************************************************
+*******	 COMPAMACHO  */
+.cookie-container {
+	position: fixed;
+	bottom: -100%;
+	left: 0px;
+	right: 0px;
+	background: #2f3640;
+	color: #f5f6fa;
+	padding: 16px 0 6px 16px;
+	box-shadow: 0 -2px 16px rgba(47, 54, 64, 0.39);
+	transition: 400ms;
+	opacity: 0.9;
+}
+
+.cookie-container.active {
+	bottom: 0;
+}
+
+.cookie-btn {
+	position: absolute;
+	color: #41a8ff;
+	background-color: transparent;
+	top: 1px;
+	right: 10px;
+	border: none;
+	font-size: 1.1rem;
+	text-transform: none;
 }

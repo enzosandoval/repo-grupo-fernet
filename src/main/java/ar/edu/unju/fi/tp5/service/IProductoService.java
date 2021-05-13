@@ -20,5 +20,5 @@ public interface IProductoService {
 	public List<Producto> obtenerProductos();
 
 	public Producto buscarProducto(int posicion);
-
+	
 }

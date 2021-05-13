@@ -44,7 +44,7 @@ public class ProductoController {
 
 	/**
 	 * 
-	 * @return La página resultado.html
+	 * @return La página resultado
 	 */
 	@PostMapping(value = "/producto/guardar", consumes = "multipart/form-data")
 	public String getResultado(@RequestParam("file") MultipartFile file, @ModelAttribute("producto") Producto producto,
@@ -59,7 +59,7 @@ public class ProductoController {
 
 	/**
 	 * 
-	 * @return La página que muestra el último Producto agregado
+	 * @return La página que muestra el último producto agregado
 	 */
 	@GetMapping("/producto/ultimo")
 	public String getUltimoProducto(Model map) {

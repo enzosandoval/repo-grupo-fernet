@@ -18,33 +18,37 @@ import ar.edu.unju.fi.tp5.util.ListaCompras;
 @Service
 public class CompraServiceImp implements ICompraService {
 
-	private static final Log LOGGER = LogFactory.getLog(ProductoServiceImp.class); 
-	
-	private List<Compra>listaCompras = ListaCompras.listaCompras;
-	
+	private static final Log LOGGER = LogFactory.getLog(ProductoServiceImp.class);
+
+	private List<Compra> listaCompras = ListaCompras.listaCompras;
+
+	private static int id = 0;
+
 	@Override
 	public void guardarCompra(Compra compra) {
+		compra.setId(id);
 		listaCompras.add(compra);
-		LOGGER.info("METHOD: agregarProducto - Se agrego un objeto producto en la lista");
-	    LOGGER.info("RESULT: Producto agregado con éxito -> Tamaño lista: " + listaCompras.size());
+		id++;
+		LOGGER.info("METHOD: guardarCompra - Se agrego un objeto compra en la lista");
+		LOGGER.info("RESULT: Compra agregada con éxito -> Tamaño lista: " + listaCompras.size());
 	}
-	
-	
+
 	@Override
 	public Compra obtenerUltimaCompra() {
-		LOGGER.info("METHOD: obtenerUltimo()");
+		LOGGER.info("METHOD: obtenerUltimaCompra()");
 		Compra compra = null;
-		if (listaCompras.size() > 0) {
-			LOGGER.info("RESULT: Ultimo producto: " + listaCompras.get(listaCompras.size() - 1));	
-		 compra = listaCompras.get(listaCompras.size()-1);   
-		 
+		if (!listaCompras.isEmpty()) {
+			LOGGER.info(
+					"RESULT: Ultima compra: " + listaCompras.get(listaCompras.size() - 1).getProducto().getNombre());
+			compra = listaCompras.get(listaCompras.size() - 1);
+
 		}
 		return compra;
 	}
 
 	@Override
-	public List<Compra> obtenerLista() {
-		LOGGER.info("METHOD: obtenerLista()");
+	public List<Compra> obtenerCompras() {
+		LOGGER.info("METHOD: obtenerCompras()");
 		return listaCompras;
 	}
 
